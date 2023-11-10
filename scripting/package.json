@@ -1,0 +1,18 @@
+{
+  "name": "@technologies/dungeonrush",
+  "version": "0.1.0",
+  "productName": "template",  //todo
+  "description": "monstera template",
+  "private": false,
+  "devDependencies": {
+    "source-map": "^0.7.4",
+    "typescript": "^4.4.3"
+  },
+  "scripts": {
+    "build": "tsc --build"
+  },
+  "dependencies": {
+    "@minecraft/server": "^1.6.0-beta",
+    "decode-uri-component": "^0.2.2"
+  }
+}
