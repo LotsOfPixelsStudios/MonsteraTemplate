@@ -1,7 +1,7 @@
 {
   "name": "@technologies/dungeonrush",
   "version": "0.1.0",
-  "productName": "template",  //todo
+  "productName": "template",
   "description": "monstera template",
   "private": false,
   "devDependencies": {
