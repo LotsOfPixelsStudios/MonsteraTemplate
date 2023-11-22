@@ -38,12 +38,23 @@ repositories {
 }
 
 application {
-    mainClass.set("com.tcreative.devtools.dungeonrush.MainKt")
+    val mainClassFind = layout
+        .projectDirectory
+        .asFileTree
+        .firstOrNull { it.name == "Main.kt" }
+        ?.path
+        ?.split("kotlin")
+        ?.last()
+        ?.removePrefix(File.separator)
+        ?.split(File.separator)
+        ?.joinToString(".")
+        ?.replace("Main.kt", "MainKt")
+    mainClass.set(mainClassFind)
 }
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("com.lotsofpixelsstudios:monstera:0.2.0")
+    implementation("com.lotsofpixelsstudios:monstera:0.2.4")
     implementation("com.lotsofpixelsstudios:monstera-std-lib:0.10-monstera-2")
 
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
@@ -58,3 +69,8 @@ dependencies {
 tasks.test {
     useJUnitPlatform()
 }
+
+//monstera tasks
+apply(from = File("tasks", "buildAddon.gradle.kts"))
+apply(from = File("tasks", "cleanAllAddons.gradle.kts"))
+apply(from = File("tasks", "cleanAllWorlds.gradle.kts"))
