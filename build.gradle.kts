@@ -54,11 +54,11 @@ application {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("com.lotsofpixelsstudios:monstera:0.2.4")
-    implementation("com.lotsofpixelsstudios:monstera-std-lib:0.10-monstera-2")
+    implementation("com.lotsofpixelsstudios:monstera:0.4.0-SNAPSHOT14")
+    implementation("com.lotsofpixelsstudios:monstera-std-lib:0.10-monstera-5")
 
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
-    implementation("ch.qos.logback:logback-classic:1.4.11")
+    implementation("ch.qos.logback:logback-classic:1.5.3")
     // https://mvnrepository.com/artifact/org.slf4j/slf4j-api
     implementation("org.slf4j:slf4j-api:2.0.9")
 

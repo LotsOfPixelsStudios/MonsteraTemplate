@@ -20,9 +20,9 @@ fun main(args: Array<String>) {
         packIcon = getResource("general/pack.png")
         world = getResource("world/template-world")
         version = arrayListOf(0, 1, 0)
-        targetMcVersion = arrayListOf(1, 20, 0)
+        targetMcVersion = arrayListOf(1, 20, 70)
         scriptEntryFile = File("scripting", "dist", "src", "index.js")
-        scriptingVersion = "1.6.0-beta"
+        scriptingVersion = "1.8.0"
     }) {
         scripts(directory = File("scripting", "dist", "src"))
 
@@ -52,7 +52,6 @@ fun main(args: Array<String>) {
             }
         }
         item("sample_item", "display name") {
-            renderOffset("tool")
             texture(getResource("item/default_texture.png"))
         }
         Player
