@@ -3,3 +3,4 @@
 node_modules
 build
 scripting/dist
+monstera-local.json

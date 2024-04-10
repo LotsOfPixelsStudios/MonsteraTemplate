@@ -2,9 +2,9 @@ package com.lop.addon
 
 import com.lop.devtools.monstera.addon.addon
 import com.lop.devtools.monstera.addon.dev.zipper.zipWorld
-import com.lop.devtools.monstera.config
 import com.lop.devtools.monstera.files.File
 import com.lop.devtools.monstera.files.getResource
+import com.lop.devtools.monstera.loadConfig
 import com.lop.devtools.stdlib.furnitures.furniture
 import com.lop.devtools.stdlib.furnitures.shared.FurnitureDropBehaviour
 import com.lop.devtools.stdlib.npcs.npc
@@ -13,18 +13,15 @@ import com.lop.devtools.stdlib.player.Player
 import java.io.File
 
 fun main(args: Array<String>) {
-    val conf = addon(config(projectName = "Template") { //todo
-        "npm.cmd run build".runCommand(File(System.getProperty("user.dir"), "scripting"))
-        projectShort = "te"
-        description = "sample"  //todo
-        packIcon = getResource("general/pack.png")
-        world = getResource("world/template-world")
-        version = arrayListOf(0, 1, 0)
-        targetMcVersion = arrayListOf(1, 20, 70)
-        scriptEntryFile = File("scripting", "dist", "src", "index.js")
-        scriptingVersion = "1.8.0"
+    val conf = addon(loadConfig().getOrElse {
+        it.printStackTrace()
+        return
     }) {
-        scripts(directory = File("scripting", "dist", "src"))
+        with(config) {
+            "npm.cmd run build".runCommand(File(System.getProperty("user.dir"), "scripting"))
+            scripts(directory = File("scripting", "dist", "src"))
+            scriptEntryFile = File("scripting", "dist", "src", "index.js")
+        }
 
         if (args.contains("package")) {
             packaging {
@@ -59,7 +56,7 @@ fun main(args: Array<String>) {
             .modifyBehaviour { }
 
         furniture("vase", "Vase", this) {
-            dropBehaviour = FurnitureDropBehaviour.CAN_PICKUP
+            dropBehaviour = FurnitureDropBehaviour.INVINCIBLE
         }
 
         npc("my_npc", "My NPC", this) {

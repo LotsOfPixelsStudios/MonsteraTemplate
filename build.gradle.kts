@@ -54,8 +54,8 @@ application {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("com.lotsofpixelsstudios:monstera:0.4.0-SNAPSHOT14")
-    implementation("com.lotsofpixelsstudios:monstera-std-lib:0.10-monstera-5")
+    implementation("com.lotsofpixelsstudios:monstera:0.4.0-SNAPSHOT18")
+    implementation("com.lotsofpixelsstudios:monstera-std-lib:0.10-monstera-8")
 
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
     implementation("ch.qos.logback:logback-classic:1.5.3")
