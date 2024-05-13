@@ -30,7 +30,7 @@ If you have access go to you're gradle home directory (on Windows: `%HOMEPATH%\.
 `env-timoliacreative.local.gradle.kts` and add the following line:
 
 ````gradle
-project.extra["gitlab_token"] = "<you're access token>"
+project.extra["gitlab_token"] = "<youre access token>"
 ````
 
 With you're access token and reload the gradle project.
