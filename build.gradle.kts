@@ -1,5 +1,5 @@
 plugins {
-    kotlin("jvm") version "1.9.23"
+    kotlin("jvm") version "2.0.0"
     id("application")
 }
 
@@ -54,8 +54,8 @@ application {
 
 dependencies {
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("com.lotsofpixelsstudios:monstera:0.4.0-SNAPSHOT22")
-    implementation("com.lotsofpixelsstudios:monstera-std-lib:0.10-monstera-15")
+    implementation("de.matthiasklenz:monstera:0.5.0")
+    implementation("com.lotsofpixelsstudios:monstera-std-lib:0.10-monstera-16")
 
     // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
     implementation("ch.qos.logback:logback-classic:1.5.3")
