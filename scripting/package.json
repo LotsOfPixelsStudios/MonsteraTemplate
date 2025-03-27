@@ -1,5 +1,5 @@
 {
-  "name": "@technologies/dungeonrush",
+  "name": "template",
   "version": "0.1.0",
   "productName": "template",
   "description": "monstera template",
@@ -12,7 +12,7 @@
     "build": "tsc --build"
   },
   "dependencies": {
-    "@minecraft/server": "^1.6.0-beta",
+    "@minecraft/server": "1.17.0",
     "decode-uri-component": "^0.2.2"
   }
 }
